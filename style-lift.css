@@ -251,14 +251,14 @@ p {
 
 /* Footer */
 footer {
-    background-color: #FFDA63; /* Footer biru gelap */
-    color: var(--text-color);
+    background-color: #FFDA63; /* Footer kuning cerah */
+    color: var(--text-color); /* Teks gelap untuk kontras */
     text-align: center;
     padding: 25px;
     margin-top: 60px;
 }
 .social-links a {
-    color: var(--text-color);
+    color: var(--text-color); /* Ikon sosial juga gelap */
 }
 
 
@@ -296,7 +296,7 @@ footer {
     max-width: 800px;
     margin: 40px auto 0;
     overflow: hidden;
-    padding: 0 50px;
+    padding: 0 50px; /* Padding ini akan disesuaikan di media query */
     border-radius: 12px;
 }
 .testimonial-slider {
@@ -304,7 +304,7 @@ footer {
     transition: transform 0.5s ease-in-out;
 }
 .testimonial-card {
-    min-width: 100%;
+    min-width: 100%; /* Penting untuk responsif */
     box-sizing: border-box;
     text-align: center;
     padding: 40px 30px;
@@ -394,9 +394,42 @@ footer {
     .feature-item, .problem-item { width: 100%; }
     .features-grid { gap: 20px; }
     .urgency-box { padding: 30px; }
-    .testimonial-prev-btn, .testimonial-next-btn {
-        font-size: 1.3rem;
-        padding: 8px 12px;
+
+    /* Testimonial Slider Mobile Adjustments */
+    .testimonial-slider-container {
+        padding: 0 20px; /* Kurangi padding container pada mobile */
+        border-radius: 8px; /* Radius border lebih kecil */
     }
-    .testimonial-slider-container { padding: 0 30px; }
+
+    .testimonial-card {
+        padding: 30px 20px; /* Kurangi padding kartu pada mobile */
+        min-width: 100%; /* Setiap kartu mengambil lebar penuh slider */
+        margin-right: 0; /* Pastikan tidak ada margin kanan yang menyebabkan overflow */
+        box-sizing: border-box; /* Pastikan padding dan border termasuk dalam lebar 100% */
+    }
+
+    .testimonial-prev-btn,
+    .testimonial-next-btn {
+        font-size: 1.1rem; /* Ukuran tombol navigasi lebih kecil */
+        padding: 8px 12px;
+        top: 50%; /* Pastikan posisi vertikal tetap di tengah */
+    }
+
+    .testimonial-prev-btn {
+        left: 5px; /* Posisi tombol lebih dekat ke tepi */
+    }
+
+    .testimonial-next-btn {
+        right: 5px; /* Posisi tombol lebih dekat ke tepi */
+    }
+
+    .testimonial-dots {
+        padding-top: 20px; /* Ruang di atas dots lebih sedikit */
+    }
+
+    .testimonial-dot {
+        width: 10px; /* Ukuran dot lebih kecil */
+        height: 10px;
+        margin: 0 4px;
+    }
 }
